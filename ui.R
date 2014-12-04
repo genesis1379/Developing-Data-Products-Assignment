@@ -1,12 +1,18 @@
 library(shiny)
 
+data(swiss)
+
 shinyUI(pageWithSidebar(
-    headerPanel("Data science FTW!"),
+    headerPanel("Linear Regression on Swiss Data Set"),
     sidebarPanel(
-        h3('Sidebar text')
+        radioButtons('predictor', 'Choose Predictor:', names(swiss)[-6])
     ),
     mainPanel(
-        h3('Main Panel text'),
-        plotOutput('plot')
+        tableOutput('data'),        
+        tableOutput('fit'),
+        plotOutput('plot1'),
+        plotOutput('plot2'),
+        plotOutput('plot3'),
+        plotOutput('plot4')
     )
 ))

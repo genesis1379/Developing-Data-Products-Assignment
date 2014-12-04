@@ -1,13 +1,21 @@
 library(shiny)
-library(ggplot2)
 
-data(father.son)
+data(swiss)
+
+fitLinearModel <- function(predictor) {
+    f <- paste(names(swiss)[6], '~', predictor)
+    lm(formula = f, data = swiss)
+}
 
 shinyServer(
     function(input, output) {
-        output$plot <- renderPlot({
-            g <- ggplot(father.son, aes(sheight, fheight))
-            g + geom_point() + geom_smooth(method = "lm", formula = y ~ x)
-        })
+        output$predictor <- renderText(input$predictor)
+        fit <- reactive(fitLinearModel(input$predictor))
+        output$fit <- renderTable(fit())
+        output$plot1 <- renderPlot(plot(fit(), which = 1))
+        output$plot2 <- renderPlot(plot(fit(), which = 2))
+        output$plot3 <- renderPlot(plot(fit(), which = 3))
+        output$plot4 <- renderPlot(plot(fit(), which = 4))
+        output$data <- renderTable(swiss)
     }
 )
