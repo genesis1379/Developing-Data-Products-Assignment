@@ -4,8 +4,8 @@ data(swiss)
 
 shinyUI (
     fluidPage (
-        title = "Linear Regression on Swiss Data Set",
-        h1("Linear Regression on Swiss Data Set"),
+        title = "Linear Regression on the Swiss Data Set in R",
+        h1("Linear Regression on the Swiss Data Set in R"),
         fluidRow (
             column (
                 5,
@@ -16,17 +16,22 @@ shinyUI (
                         'and socio-economic indicators for each of 47 French-speaking',
                         'provinces of Switzerland at about 1888 as well as the infant',
                         'mortality rate of these provinces. All variables but the',
-                        'fertility give the proportions of the population.'
+                        'fertility give the proportions of the population. Here are the',
+                        'first 7 rows of that data set.'
                     )
                 ),
+                br(),
                 tableOutput('data'),
                 p (
+                    br(),
                     paste (
                         'Please choose at least one predictor with which you want',
-                        'to predict the infant mortality rate. With your selection',
-                        'a generalized linear model is fitted whose summary is',
-                        'displayed to the right. The model fit is also visualized',
-                        'in three different plots which you can find below.'
+                        'to predict the infant mortality rate. All selected predictors',
+                        'will be used to fit a generalized linear model on the data set.',
+                        'To the right you can see the summary of that model and below',
+                        'you find some visualizations of the model. Every selection you',
+                        'make immediately triggers a new model fit and an update of the',
+                        'summary and the visualizations.'
                     )
                 )
             ),
@@ -42,8 +47,7 @@ shinyUI (
                 checkboxGroupInput (
                     "predictors",
                     "Choose predictor(s):",
-                    names(swiss)[-6],
-                    names(swiss)[1]
+                    names(swiss)[-6]
                 )
             ),
             column (

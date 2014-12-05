@@ -1,18 +1,27 @@
 library(shiny)
 
 data(swiss)
+options(warn = -1)
 
 fitLinearModel <- function(predictors) {
-    f <- paste(names(swiss)[6], '~', paste(predictors, collapse = ' + '))
-    glm(formula = f, data = swiss)
+    if ( !is.null(predictors) ) {
+        f <- paste(names(swiss)[6], '~', paste(predictors, collapse = ' + '))
+        glm(formula = f, data = swiss)
+    } else {
+        NA
+    }
 }
 
 plotModel <- function(fit, n) {
-    plot(fit, which = n)
+    if ( !is.na(fit) ) {
+        plot(fit, which = n)
+    }
 }
 
 summarizeModel <- function(fit) {
-    summary(fit)
+    if( !is.na(fit) ) {
+        summary(fit)
+    }
 }
 
 shinyServer(
