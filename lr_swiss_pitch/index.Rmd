@@ -1,0 +1,49 @@
+---
+title       : GLM's on the Swiss Data Set
+subtitle    : Understanding and Explaining General Linear Models Has Become Easy
+author      : Sebastian Bolz
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Why Should You Know Linear Regression?
+
+* easy to use
+* easy to interpret
+* applicable for a huge variety of problems
+* fairly accurate
+
+$\Rightarrow$ probably most widely used algorithm by data scientists accross the world
+
+```{r, echo = FALSE, fig.width = 8, fig.height = 4, fig.align = 'center'}
+library(ggplot2)
+p <- ggplot(swiss, aes(Fertility, Infant.Mortality))
+p <- p + geom_point() + stat_smooth(method = "lm")
+p <- p + xlab("") + ylab("")
+p
+```
+
+---
+
+## Why Should You Know General Linear Models?
+
+* only very few real world problems are two-dimensional
+* lots of problems with discrete outcomes
+* error models have to stay interpretable even when the outcome has to be positive
+
+```{r, echo = FALSE}
+glm(Infant.Mortality ~ Fertility + Education + Catholic, data = swiss)
+```
+
+---
+
+## How Does The App Help You Understand GLM's?
+
+---
+
+## How Does The App Help You Explain GLM's?
