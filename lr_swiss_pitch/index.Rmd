@@ -48,7 +48,7 @@ glm(Infant.Mortality ~ Fertility + Education + Catholic, data = swiss)
 * you can concentrate on the algorithm
 * you can play around with different predictors and compare their effects
 
-<center><img src=./assets/img/main.tiff height='60%' width='60%' style='margin:0px; border: 2px solid #FF0000'/></center>
+<center><img src=./assets/img/main.png height='60%' width='60%' style='margin:0px; border: 2px solid #FF0000'/></center>
 
 <center>https://s-bolz.shinyapps.io/Developing-Data-Products-Assignment/</center>
 
