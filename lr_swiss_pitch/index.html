@@ -53,7 +53,7 @@
 <li>fairly accurate</li>
 </ul>
 
-<p>\(\Rightarrow\) probably most widely used algorithm by data scientists accross the world</p>
+<p>\(\Rightarrow\) among the most widely used algorithms by data scientists</p>
 
 <p><img src="assets/fig/unnamed-chunk-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
 
@@ -94,21 +94,66 @@
     <h2>How Does The App Help You Understand GLM&#39;s?</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li>no need to learn a language like R</li>
+<li>you can concentrate on the algorithm</li>
+<li>you can play around with different predictors and compare their effects</li>
+</ul>
+
+<p><center><img src=./assets/img/main.tiff height='60%' width='60%' style='margin:0px; border: 2px solid #FF0000'/></center></p>
+
+<p><center><a href="https://s-bolz.shinyapps.io/Developing-Data-Products-Assignment/">https://s-bolz.shinyapps.io/Developing-Data-Products-Assignment/</a></center></p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-4" style="background:;">
+<slide class="" id="slide-4">
   <hgroup>
     <h2>How Does The App Help You Explain GLM&#39;s?</h2>
   </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
+  <article>
+      
+    <div class='left' style='float:left;width:48%'>
+     <ul>
+<li>no need to explain any code syntax</li>
+<li>focus on the interpretation</li>
+<li>explain the effects of in-/exclusion of certain predictors on
 
+<ul>
+<li>the model quality</li>
+<li>the coefficients and their significance</li>
+<li>the model visualizations</li>
+<li>the sign of other coefficients (see examples to the right)</li>
+</ul></li>
+</ul>
+
+    </div>    
+    <div class='right' style='float:right;width:48%'>
+     <pre><code class="r">glm (
+    Infant.Mortality ~ Fertility
+                       + Examination,
+    data = swiss
+)$coefficients
+</code></pre>
+
+<pre><code>## (Intercept)   Fertility Examination 
+##     8.71870     0.13719     0.09711
+</code></pre>
+
+<pre><code class="r">glm (
+    Infant.Mortality ~ Examination,
+    data = swiss
+)$coefficients
+</code></pre>
+
+<pre><code>## (Intercept) Examination 
+##    20.62899    -0.04163
+</code></pre>
+
+    </div>
+  </article>
+</slide>
     <slide class="backdrop"></slide>
   </slides>
   <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
