@@ -26,7 +26,7 @@ $\Rightarrow$ among the most widely used algorithms by data scientists
 
 ## Why Should You Know General Linear Models?
 
-* only very few real world problems are two-dimensional
+* a specific case of GLM's is linear regression with multiple predictors
 * lots of problems with discrete outcomes
 * error models have to stay interpretable even when the outcome has to be positive
 
